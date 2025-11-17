@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweety Beauty – Sakura Edition</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* GENERAL */
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #fffafc;
+            color: #543b4a;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", serif;
+            color: #7c445a;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: linear-gradient(to right, #ffe1ec, #ffeaf4);
+            border-bottom: 1px solid #f7c9d9;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #a6517e;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 14px;
+            margin-top: -6px;
+            color: #bf7a9d;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #7a4d5e;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #cb6fa2;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(180deg, #ffe6f1, #ffddea, #ffe8f3);
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 120px;
+            border-bottom-right-radius: 120px;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #4a2f3d;
+        }
+
+        .hero-content h1 {
+            font-size: 58px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #e46aa1;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(228,106,161,0.3);
+        }
+
+        .btn:hover {
+            background: #d45b94;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 50px;
+            color: #8c3f63;
+        }
+
+        .alt {
+            background: #fff2f7;
+            border-top-left-radius: 90px;
+            border-top-right-radius: 90px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 130, 180, 0.15);
+            text-align: center;
+            border: 1px solid #ffd6e6;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(240, 100, 150, 0.25);
+        }
+
+        /* OFFERS */
+        .offer {
+            background: white;
+            padding: 30px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(240, 110, 150, 0.15);
+            text-align: center;
+            border: 1px solid #ffcce0;
+        }
+
+        .offer span {
+            color: #d6538c;
+            font-weight: 700;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 60%;
+            margin: 0 auto 30px;
+            text-align: center;
+            border: 1px solid #ffd2e5;
+            box-shadow: 0 6px 15px rgba(255, 150, 190, 0.2);
+        }
+
+        /* FORMULAIRE SAKURA */
+        .form-sakura {
+            width: 75%;
+            margin: auto;
+            padding: 40px;
+            border-radius: 25px;
+            background: #fff;
+            border: 1px solid #ffd6e6;
+            box-shadow: 0 10px 25px rgba(255, 130, 180, 0.15);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #7c445a;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-sakura input,
+        .form-sakura textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #ffd0e2;
+            font-size: 15px;
+            background: #fff8fb;
+        }
+
+        .form-sakura input:focus,
+        .form-sakura textarea:focus {
+            border-color: #e46aa1;
+            outline: none;
+            box-shadow: 0 0 8px rgba(228, 106, 161, 0.25);
+        }
+
+        .form-sakura textarea {
+            resize: none;
+            margin-top: 10px;
+        }
+
+        .form-btn {
+            display: block;
+            width: 50%;
+            margin: 25px auto 0;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #e46aa1, #d45b94);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(228, 106, 161, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #d45b94, #c44a83);
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+
+            .form-btn {
+                width: 100%;
+            }
+
+            .form-sakura {
+                width: 90%;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #ffe3ef;
+            margin-top: 40px;
+            border-top: 1px solid #f7c9d9;
+            color: #8c3f63;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">SB <span>Sweety Beauty</span></div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#formations">Formations</a>
+            <a href="#offres">Offres</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Sweety Beauty</h1>
+            <p>Un univers Sakura doux et élégant.</p>
+            <a href="#contact" class="btn">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <h2 class="section-title">Nos Services</h2>
+
+        <div class="cards">
+            <div class="card"><h3>Soins du visage</h3></div>
+            <div class="card"><h3>Épilations</h3><p>Forfait illimité : 49€/mois</p></div>
+            <div class="card"><h3>Skin Care</h3></div>
+            <div class="card"><h3>Amincissement</h3></div>
+            <div class="card"><h3>Nails Art</h3></div>
+            <div class="card"><h3>Extensions de cils</h3></div>
+            <div class="card"><h3>Tresses & Locks</h3></div>
+        </div>
+    </section>
+
+    <!-- FORMATIONS -->
+    <section id="formations" class="section alt">
+        <h2 class="section-title">Formations Professionnelles</h2>
+
+        <div class="cards">
+            <div class="card"><h3>Maderothérapie</h3><p>200€ — Débutants acceptés</p></div>
+            <div class="card"><h3>Gel X + Popit + Acrygel</h3><p>250€ — Débutants acceptés</p></div>
+            <div class="card"><h3>Nails Art</h3><p>150€ — Débutants acceptés</p></div>
+        </div>
+    </section>
+
+    <!-- OFFRES -->
+    <section id="offres" class="section">
+        <h2 class="section-title">Offres Spéciales</h2>
+
+        <div class="offer">
+            <h3>Black Friday</h3>
+            <p>Épilations à <span>29.99€/mois</span> pendant 3 mois !</p>
+        </div>
+
+        <div class="offer">
+            <h3>Extensions de cils</h3>
+            <p>50€ jusqu'au 03/12/2025</p>
+        </div>
+    </section>
+
+    <!-- CONTACT + FORMULAIRE -->
+    <section id="contact" class="section alt">
+        <h2 class="section-title">Contact & Réservations</h2>
+
+        <!-- FORMULAIRE SAKURA -->
+        <form id="rdv-form" class="form-sakura">
+            <h3 class="form-title">Prendre Rendez-vous</h3>
+
+            <div class="form-row">
+                <input type="text" id="nom" placeholder="Nom" required>
+                <input type="text" id="prenom" placeholder="Prénom" required>
+            </div>
+
+            <div class="form-row">
+                <input type="tel" id="telephone" placeholder="Téléphone" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+            </div>
+
+            <textarea id="message" placeholder="Message / Prestation désirée" rows="5" required></textarea>
+
+            <button type="submit" class="btn form-btn">Envoyer la demande</button>
+        </form>
+
+        <p id="success-message" style="text-align:center; display:none; margin-top:20px; color:#8c3f63; font-weight:bold;">
+            Votre demande de rendez-vous a été envoyée !
+        </p>
+    </section>
+
+    <footer>
+        © 2025 Sweety Beauty – Sakura Edition
+    </footer>
+
+    <!-- EMAILJS (nouvelle version 2025) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init({
+            publicKey: "6xVEBDhBfWAxVZrXv",
+        });
+
+        document.getElementById("rdv-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.send("service_07bzhx8", "template_yniy1zi", {
+                nom: document.getElementById("nom").value,
+                prenom: document.getElementById("prenom").value,
+                telephone: document.getElementById("telephone").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+            })
+            .then(() => {
+                document.getElementById("success-message").style.display = "block";
+                document.getElementById("rdv-form").reset();
+            })
+            .catch((err) => {
+                alert("Erreur : " + JSON.stringify(err));
+            });
+        });
+    </script>
+
+</body>
+</html>
